@@ -1,0 +1,46 @@
+url: https://stranger-uos.github.io
+baseurl:
+
+# Site settings
+title: STRANGER
+email: stranger.uos.19@gmail.com
+description: "Excuse me! You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
+
+
+# Team names, titles and social links
+people:
+- name: Sangjin Cheon
+  pic: 1
+  position: Researcher
+  social:
+    - title: github
+      url: #
+    - title: facebook
+      url: #
+    - title: stack-overflow
+      url: #
+
+- name: Gilim Hong
+  pic: 2
+  position: Researcher
+  social:
+    - title: github
+      url: #
+    - title: facebook
+      url: #
+    - title: linkedin
+      url: #
+
+# Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
+social:
+  - title: github
+    url: http://github.com/stranger-uos
+
+# Postal address (add as many lines as necessary)
+address:
+  - line: Department of Computer Scinece
+  - line: University of Seoul, Seoul, South Korea
+
+# Build settings
+markdown: kramdown
+permalink: pretty
