@@ -6,4 +6,4 @@
 ## 한계점
 ## Links
 - 프로토타입 : <http://naver.com>
-- 발표자료 : 
+- 발표자료 : <https://github.com/stranger-uos/stranger-uos.github.io/blob/master/_data/ppt/test.pdf>
