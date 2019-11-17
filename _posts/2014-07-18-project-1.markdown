@@ -1,15 +1,14 @@
 ---
-title: Dreams
-subtitle: Website Design
+title: Prototype
+subtitle: Medium Fideltiy Prototype
 layout: default
 modal-id: 1
-date: 2014-07-18
-img: dreams.png
-thumbnail: dreams-thumbnail.png
+date: 2019-11-17
+img: post_medium_fi.jpg
+thumbnail: post_medium_fi.jpg
 alt: image-alt
-project-date: April 2014
-client: Start Bootstrap
-category: Web Development
-description: Lorem ipsum dolor sit amet, usu cu alterum nominavi lobortis. At duo novum diceret. Tantas apeirian vix et, usu sanctus postulant inciderint ut, populo diceret necessitatibus in vim. Cu eum dicam feugiat noluisse.
-
+project-date: November 2019
+category: App prototype
+description: 저기요 서비스의 Medium Fidelity 프로토타입입니다. 저기요는 외국에서의 생활을 처음 시작하는 사람들이 잘못 또는 오래된 정보로 인해 겪는 문제를 해결하고자 기획하게 되었습니다.
+readme-link: https://github.com/stranger-uos/stranger-uos.github.io/blob/master/README.md
 ---
