@@ -4,8 +4,8 @@ subtitle: Medium Fideltiy Prototype
 layout: default
 modal-id: 1
 date: 2019-11-17
-img: post_medium_fi.jpg
-thumbnail: post_medium_fi.jpg
+img: post_medium_fi.png
+thumbnail: post_medium_fi_thumbnail.jpg
 alt: image-alt
 project-date: November 2019
 category: App prototype
