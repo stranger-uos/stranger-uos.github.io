@@ -5,17 +5,30 @@
     <description>Excuse me! You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 18 Nov 2019 10:32:32 +0900</pubDate>
-    <lastBuildDate>Mon, 18 Nov 2019 10:32:32 +0900</lastBuildDate>
+    <pubDate>Thu, 21 Nov 2019 17:28:43 +0900</pubDate>
+    <lastBuildDate>Thu, 21 Nov 2019 17:28:43 +0900</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
-        <title>Prototype</title>
+        <title>Medium-fi Prototype</title>
         <description>
 </description>
-        <pubDate>Sun, 17 Nov 2019 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/app%20prototype/2019/11/17/project-1/</link>
-        <guid isPermaLink="true">http://localhost:4000/app%20prototype/2019/11/17/project-1/</guid>
+        <pubDate>Mon, 18 Nov 2019 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/app%20prototype/2019/11/18/medium-fi-prototype/</link>
+        <guid isPermaLink="true">http://localhost:4000/app%20prototype/2019/11/18/medium-fi-prototype/</guid>
+        
+        
+        <category>App prototype</category>
+        
+      </item>
+    
+      <item>
+        <title>Low-fi Prototype</title>
+        <description>
+</description>
+        <pubDate>Mon, 28 Oct 2019 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/app%20prototype/2019/10/28/low-fi-prototype/</link>
+        <guid isPermaLink="true">http://localhost:4000/app%20prototype/2019/10/28/low-fi-prototype/</guid>
         
         
         <category>App prototype</category>
