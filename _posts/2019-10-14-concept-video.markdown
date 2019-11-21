@@ -11,6 +11,6 @@ project-date: October 2019
 category: App prototype
 description: 이전 과정을 통해 만든 3개의 해결책을 더 심화시키고, 타겟에게 효과적으로 이해시키고 전달하기 위해 Concept Video를 제작하였습니다. 
 readme-link: null
-ppt-link: null
+ppt-link: https://github.com/stranger-uos/stranger-uos.github.io/blob/master/_data/ppt/assignment4.pdf
 youtube-link: https://www.youtube.com/embed/LpHjUTisgck
 ---

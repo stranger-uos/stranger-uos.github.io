@@ -11,6 +11,6 @@ project-date: October 2019
 category: App prototype
 description: 인터뷰 결과를 바탕으로 저희의 아이디어를 더 구체화하고 Needs에 대한 해결책을 찾기 위해 POV(Point Of View)와 HMW(How Might We..?)를 정의하였고, 이를 바탕으로 브레인스토밍 과정을 거쳐 총 3개의 해결책을 만들었습니다.
 readme-link: null
-ppt-link: null
+ppt-link: https://github.com/stranger-uos/stranger-uos.github.io/blob/master/_data/ppt/assignment3.pdf
 youtube-link: null
 ---
