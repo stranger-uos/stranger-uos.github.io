@@ -2,7 +2,7 @@
 title: Low-fi Prototype
 subtitle: Low Fideltiy Prototype
 layout: default
-modal-id: 1
+modal-id: 4 
 date: 2019-10-28
 img: post_medium_fi.png
 thumbnail: post_medium_fi_thumbnail.jpg

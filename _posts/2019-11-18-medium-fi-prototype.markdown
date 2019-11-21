@@ -2,7 +2,7 @@
 title: Medium-fi Prototype
 subtitle: Medium Fideltiy Prototype
 layout: default
-modal-id: 2
+modal-id: 5 
 date: 2019-11-18
 img: post_medium_fi.png
 thumbnail: post_medium_fi_thumbnail.jpg
