@@ -4,8 +4,8 @@ subtitle: Low Fideltiy Prototype
 layout: default
 modal-id: 4 
 date: 2019-10-28
-img: post_low_fi.png
-thumbnail: post_low_fi_thumbnail.png
+img: post_low_fi.PNG
+thumbnail: post_low_fi_thumbnail.PNG
 alt: image-alt
 project-date: October 2019
 category: App prototype
