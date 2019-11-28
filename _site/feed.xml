@@ -5,9 +5,48 @@
     <description>Excuse me! You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</description>
     <link>https://stranger-uos.github.io/</link>
     <atom:link href="https://stranger-uos.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 28 Nov 2019 17:28:18 +0900</pubDate>
-    <lastBuildDate>Thu, 28 Nov 2019 17:28:18 +0900</lastBuildDate>
+    <pubDate>Thu, 28 Nov 2019 17:54:34 +0900</pubDate>
+    <lastBuildDate>Thu, 28 Nov 2019 17:54:34 +0900</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
+    
+      <item>
+        <title>Hi-fi Prototype</title>
+        <description>
+</description>
+        <pubDate>Thu, 28 Nov 2019 00:00:00 +0900</pubDate>
+        <link>https://stranger-uos.github.io/app%20prototype/2019/11/28/hi-fi-prototype/</link>
+        <guid isPermaLink="true">https://stranger-uos.github.io/app%20prototype/2019/11/28/hi-fi-prototype/</guid>
+        
+        
+        <category>App prototype</category>
+        
+      </item>
+    
+      <item>
+        <title>Poster</title>
+        <description>
+</description>
+        <pubDate>Thu, 28 Nov 2019 00:00:00 +0900</pubDate>
+        <link>https://stranger-uos.github.io/app%20prototype/2019/11/28/final/</link>
+        <guid isPermaLink="true">https://stranger-uos.github.io/app%20prototype/2019/11/28/final/</guid>
+        
+        
+        <category>App prototype</category>
+        
+      </item>
+    
+      <item>
+        <title>Heuristic Evaluation</title>
+        <description>
+</description>
+        <pubDate>Mon, 25 Nov 2019 00:00:00 +0900</pubDate>
+        <link>https://stranger-uos.github.io/app%20prototype/2019/11/25/heuristic-evaluation/</link>
+        <guid isPermaLink="true">https://stranger-uos.github.io/app%20prototype/2019/11/25/heuristic-evaluation/</guid>
+        
+        
+        <category>App prototype</category>
+        
+      </item>
     
       <item>
         <title>Medium-fi Prototype</title>
