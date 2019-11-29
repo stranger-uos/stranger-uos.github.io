@@ -4,13 +4,14 @@ subtitle: High Fidelity Prototype
 layout: default
 modal-id: 7 
 date: 2019-11-28
-img: post_comingsoon.jpg
-thumbnail: post_comingsoon.jpg
+img: post_comingsoon.PNG
+thumbnail: post_comingsoon.PNG
 alt: image-alt
 project-date: November 2019
 category: App prototype
-description: 저기요 서비스의 Medium Fidelity 프로토타입입니다. 저기요는 외국에서의 생활을 처음 시작하는 사람들이 잘못 또는 오래된 정보로 인해 겪는 문제를 해결하고자 기획하게 되었습니다.
-ppt-link: https://github.com/stranger-uos/stranger-uos.github.io/blob/master/_data/ppt/assignment7.pdf
-readme-link: https://github.com/stranger-uos/stranger-uos.github.io/blob/master/_data/readme/medium_fidelity.md
+description: 
+ppt-link: null
+readme-link: null
+report-link: null
 youtube-link: null
 ---

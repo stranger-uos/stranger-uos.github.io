@@ -1,3 +1,8 @@
+<style>
+    .download-link {
+        font-size: 16px;
+    }
+</style>
  <!-- Portfolio Modals -->
  {% for post in site.posts %}
     <div class="portfolio-modal modal fade" id="portfolioModal{{ post.modal-id }}" tabindex="-1" role="dialog" aria-hidden="true">
@@ -21,24 +26,29 @@
                             <iframe width="560" height="315" src={{post.youtube-link}} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             {% endif %}
                             <p>{{ post.description }}</p>
+                            <p style="font-weight: bold; margin-bottom: 10px; font-size: 24px;">More Resources</p>
                             <ul class="list-inline item-details">
-                                <li>Date:
-                                    <strong>{{ post.project-date }}</strong>
-                                </li>
+                                {% if post.readme-link != null %}
                                 <li>
-                                    {% if post.readme-link != null %}
                                     <strong>
-                                        <a target="_blank" href={{post.readme-link}}>Github</a>
+                                        <a class="download-link" target="_blank" href={{post.readme-link}}>README</a>
                                     </strong>
-                                    {% endif %}
-
-                                    {% if post.ppt-link != null %}
-                                    <strong>
-                                        <a target="_blank" href={{post.ppt-link}}>PPT</a>
-                                    </strong>
-                                    {% endif %}
-
                                 </li>
+                                {% endif %}
+                                {% if post.ppt-link != null %}
+                                <li>
+                                    <strong>
+                                        <a class="download-link" target="_blank" href={{post.ppt-link}}>PRESENTATION</a>
+                                    </strong>
+                                </li>
+                                {% endif %}
+                                {% if post.report-link != null %}
+                                <li>
+                                    <strong>
+                                        <a class="download-link" target="_blank" href={{post.report-link}}>REPORT</a>
+                                    </strong>
+                                </li>
+                                {% endif %}
                             </ul>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>

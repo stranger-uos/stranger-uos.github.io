@@ -13,4 +13,5 @@ description: 저기요 서비스의 Medium Fidelity 프로토타입입니다. �
 ppt-link: https://github.com/stranger-uos/stranger-uos.github.io/blob/master/_data/ppt/assignment7.pdf
 readme-link: https://github.com/stranger-uos/stranger-uos.github.io/blob/master/_data/readme/medium_fidelity.md
 youtube-link: null
+report-link: null
 ---

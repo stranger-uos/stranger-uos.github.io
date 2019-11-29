@@ -9,8 +9,9 @@ thumbnail: post_he_thumbnail.png
 alt: image-alt
 project-date: November 2019
 category: App prototype
-description: 저기요 서비스의 Medium Fidelity 프로토타입입니다. 저기요는 외국에서의 생활을 처음 시작하는 사람들이 잘못 또는 오래된 정보로 인해 겪는 문제를 해결하고자 기획하게 되었습니다.
-ppt-link: https://github.com/stranger-uos/stranger-uos.github.io/blob/master/_data/ppt/assignment7.pdf
-readme-link: https://github.com/stranger-uos/stranger-uos.github.io/blob/master/_data/readme/medium_fidelity.md
+description: High-fi 프로토타입을 제작하기 전에 전문가들로부터 Medium-fi 프로토타입에 대한 휴리스틱 평가를 받았습니다. 이 평가 결과로부터 저희는 Medium-fi 프로토타입을 개선해 나갈 것입니다.
+ppt-link: null
+report-link: https://github.com/stranger-uos/stranger-uos.github.io/blob/master/_data/reports/assignment8.pdf
+readme-link: null
 youtube-link: null
 ---
