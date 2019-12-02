@@ -49,6 +49,13 @@
                                     </strong>
                                 </li>
                                 {% endif %}
+                                {% if post.prototype-link != null %}
+                                <li>
+                                    <strong>
+                                        <a class="download-link" target="_blank" href={{post.prototype-link}}>PROTOTYPE</a>
+                                    </strong>
+                                </li>
+                                {% endif %}
                             </ul>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>

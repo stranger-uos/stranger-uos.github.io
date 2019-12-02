@@ -14,4 +14,5 @@ ppt-link: https://github.com/stranger-uos/stranger-uos.github.io/blob/master/_da
 readme-link: https://github.com/stranger-uos/stranger-uos.github.io/blob/master/_data/readme/medium_fidelity.md
 report-link: https://github.com/stranger-uos/stranger-uos.github.io/blob/master/_data/reports/assignment7.pdf
 youtube-link: null
+prototype-link: https://www.justinmind.com/usernote/tests/43783560/43856718/43856779/index.html 
 ---

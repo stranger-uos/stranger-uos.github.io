@@ -14,4 +14,5 @@ ppt-link: https://github.com/stranger-uos/stranger-uos.github.io/blob/master/_da
 readme-link: null
 report-link: null
 youtube-link: null
+prototype-link: https://ovenapp.io/view/x21ZnxSC7KoirWcF8W1DVYKCIbzs56Ex/6qe1o
 ---
