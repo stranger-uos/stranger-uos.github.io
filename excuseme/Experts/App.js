@@ -1,113 +1,126 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
-import React from 'react';
+import React, {Component} from 'react';
 import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
+  Alert,
+  TouchableHighlight,
   Text,
-  StatusBar,
+  StyleSheet,
+  View,
+  FlatList,
+  SafeAreaView,
 } from 'react-native';
+import SendBird from 'sendbird';
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+const APP_ID = '82E76688-E4BC-4396-B1E4-6472899044B9';
+const USER_ID = 'UOS_EXPERTS_1';
+const NICK_NAME = 'TEST_1';
 
-const App: () => React$Node = () => {
+function Item({data, onPress}) {
   return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    </>
+    <TouchableHighlight onPress={onPress}>
+      <View style={styles.item}>
+        <Text style={styles.title}>{data.name}</Text>
+      </View>
+    </TouchableHighlight>
   );
-};
+}
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      channelList: [],
+    };
+
+    this.sb = new SendBird({appId: APP_ID});
+    this.sb.connect(USER_ID, (user, error) => {
+      if (error) {
+        console.error('connect', error);
+      } else {
+        this.sb.updateCurrentUserInfo(NICK_NAME, null, (response, error) => {
+          if (error) {
+            console.error('update user info :', error);
+          }
+        });
+      }
+    });
+  }
+
+  componentDidMount() {
+    this._getOpenChannelList();
+  }
+
+  componentWillUnmount() {
+    this.sb.disconnect();
+  }
+
+
+  _getOpenChannelList() {
+    let openChannelListQuery = this.sb.OpenChannel.createOpenChannelListQuery();
+    openChannelListQuery.next((openChannels, error) => {
+      if (error) {
+        console.error(error);
+        return;
+      }
+
+      console.log('Get channel list');
+      this.setState({channelList: openChannels});
+    });
+  }
+
+  _enterOpenChannel(url) {
+    this.sb.OpenChannel.getChannel(url, (openChannel, error) => {
+      if (error) {
+        Alert.alert(error);
+        return;
+      }
+
+      openChannel.enter((response, error) => {
+        if (error) {
+          return;
+        }
+        console.log(response)
+      })
+    })
+  }
+
+  render() {
+    const data = this.state.channelList.map(v => {
+      return {
+        id: v.url,
+        participantCount: v.participantCount,
+        coverUrl: v.coverUrl,
+        createdAt: v.createdAt,
+        name: v.name,
+      };
+    });
+    return (
+      <SafeAreaView>
+        <FlatList
+          data={data}
+          renderItem={({item}) => (
+            <Item data={item} onPress={() => this._enterOpenChannel(item.id)} />
+          )}
+          keyExtractor={item => item.id}
+        />
+      </SafeAreaView>
+    );
+  }
+}
 
 const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
+  container: {
+    flex: 1,
+    marginTop: 10,
   },
-  engine: {
-    position: 'absolute',
-    right: 0,
+  item: {
+    backgroundColor: '#f9c2ff',
+    padding: 20,
+    marginVertical: 8,
+    marginHorizontal: 16,
   },
-  body: {
-    backgroundColor: Colors.white,
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
+  title: {
+    fontSize: 32,
   },
 });
 
