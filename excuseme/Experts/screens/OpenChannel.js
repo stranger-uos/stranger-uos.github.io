@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {Button} from 'react-native';
+import {GiftedChat} from 'react-native-gifted-chat';
+import {orderBy} from 'lodash';
 
 class OpenChannel extends Component {
   static navigationOptions = {
@@ -10,33 +11,17 @@ class OpenChannel extends Component {
     super(props);
 
     const {navigation} = this.props;
+    const sb = navigation.getParam('sb');
     const channel = navigation.getParam('channel');
     const messageParams = navigation.getParam('messageParams');
 
-    this.state = {channel, params: messageParams};
-    this.state.channel.enter((response, error) => {
-      if (error) {
-        console.log(error);
-        return;
-      }
-
-      let params = this.state.params;
-      console.log(params);
-      params.message = 'Hello?'
-      params.mentionType = 'users'; // Either 'users' or 'channel'
-      params.mentionedUserIds = ['Jeff', 'Julia']; // Or mentionedUsers = Array<User>;
-      params.metaArrayKeys = ['linkTo', 'itemType'];
-      params.translationTargetLanguages = ['fe', 'de']; // French and German
-      params.pushNotificationDeliveryOption = 'default'; // Either 'default' or 'suppress'
-
-      this.state.channel.sendUserMessage(params, function(message, error) {
-          if(error) {
-              return;
-          }
-
-          console.log(message);
-      })
-    });
+    this.state = {
+      sb,
+      channel,
+      messageParams,
+      messageList: [],
+      messages: [],
+    };
   }
 
   componentWillUnmount() {
@@ -48,8 +33,95 @@ class OpenChannel extends Component {
     });
   }
 
+  _generateMessage(message) {
+    let user = {
+      _id: 'admin',
+      name: 'admin',
+      avatar: 'https://placeimg.com/140/140/any',
+    };
+
+    if (message.messageType === 'user') {
+      user._id = message._sender.userId;
+      user.name = message._sender.nickname;
+    }
+
+    let result = {
+      _id: message.messageId,
+      text: message.message,
+      createdAt: new Date(message.createdAt),
+      user,
+    };
+    return result;
+  }
+
+  componentDidMount() {
+    this.state.channel.enter((response, error) => {
+      if (error) {
+        console.log(error);
+        return;
+      }
+
+      const messageListQuery = this.state.channel.createPreviousMessageListQuery();
+      messageListQuery.load((messageList, error) => {
+        if (error) {
+          return;
+        }
+
+        let messages = messageList.map((v, i) => this._generateMessage(v));
+        messages = orderBy(messages, ['createdAt'], ['desc']);
+
+        let ChannelHandler = new this.state.sb.ChannelHandler();
+
+        ChannelHandler.onMessageReceived = (_, message) => {
+          this.setState(previousState => ({
+            messages: GiftedChat.append(
+              previousState.messages,
+              this._generateMessage(message),
+            ),
+          }));
+        };
+
+        this.state.sb.addChannelHandler(
+          `${this.state.channel.url}_RECEIVED_HANDLER`,
+          ChannelHandler,
+        );
+
+        this.setState({messages});
+      });
+    });
+  }
+
+  onSend(messages = []) {
+    let params = this.state.messageParams;
+    params.message = messages[0].text;
+    params.mentionType = 'users'; // Either 'users' or 'channel'
+
+    this.state.channel.sendUserMessage(params, (message, error) => {
+      if (error) {
+        return;
+      }
+
+      this.setState(previousState => ({
+        messages: GiftedChat.append(
+          previousState.messages,
+          this._generateMessage(message),
+        ),
+      }));
+    });
+  }
+
   render() {
-    return <Button title="Go to Jane's profile" />;
+    return (
+      <GiftedChat
+        messages={this.state.messages}
+        onSend={messages => this.onSend(messages)}
+        user={{
+          _id: 'UOS_EXPERTS_1',
+          name: 'TEST_1',
+        }}
+        locale="kr"
+      />
+    );
   }
 }
 

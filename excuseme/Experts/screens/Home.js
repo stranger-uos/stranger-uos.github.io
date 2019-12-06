@@ -81,6 +81,7 @@ class Home extends Component {
       }
 
       navigate('OpenChannel', {
+        sb: this.sb,
         channel: openChannel,
         messageParams: new this.sb.UserMessageParams(),
       });
