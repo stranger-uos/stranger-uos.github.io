@@ -4,8 +4,8 @@ subtitle: High Fidelity Prototype & Final
 layout: default
 modal-id: 7 
 date: 2019-12-17
-img: hifi_thumbnail.png
-thumbnail: hifi_thumbnail.png
+img: hifi_thumbnail.PNG
+thumbnail: hifi_thumbnail.PNG
 alt: image-alt
 project-date: December 2019
 category: App prototype
@@ -15,5 +15,5 @@ readme-link: null
 report-link: https://github.com/stranger-uos/stranger-uos.github.io/blob/master/_data/reports/final.pdf
 youtube-link: null
 prototype-link: null
-poster-link: https://github.com/stranger-uos/stranger-uos.github.io/blob/master/_data/ppt/poster.pdf 
+poster-link: https://github.com/stranger-uos/stranger-uos.github.io/blob/master/_data/ppt/poster.pdf
 ---
